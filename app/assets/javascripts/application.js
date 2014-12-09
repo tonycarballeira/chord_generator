@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+
+
+ // $keys.on('played-note.piano', function(evt, key) {
+ //            if (recording) {
+ //                data.push({'key': key, 'time': new Date().getTime()});
+ //            }
+ //        });
