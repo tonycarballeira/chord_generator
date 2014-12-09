@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @progression.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @progression.description %>
+</p>
+<% @progression.ordered_chords.order(:order).each do |x|%>
+		
+		<p><%= x.order %></p>
+		<p><%= x.chord_name %></p>
+
+	
+<% end %>
+
+
+
+
+<%= link_to 'Edit', edit_progression_path(@progression) %> |
+<%= link_to 'Back', progressions_path %>

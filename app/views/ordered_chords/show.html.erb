@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @ordered_chord.order %>
+</p>
+
+<p>
+  <strong>Main chord:</strong>
+  <%= @ordered_chord.main_chord %>
+</p>
+
+<p>
+  <strong>Progessions:</strong>
+  <%= @ordered_chord.progessions %>
+</p>
+
+<%= link_to 'Edit', edit_ordered_chord_path(@ordered_chord) %> |
+<%= link_to 'Back', ordered_chords_path %>

@@ -1,0 +1,14 @@
+<h1>Chord Search</h1>
+<p>Please enter the three notes of your chord</p>
+
+<%= form_tag(chords_do_search_path) do %>
+<%= text_field_tag :note1 %>
+<%= text_field_tag :note2 %>
+<%= text_field_tag :note3 %>
+
+<%= submit_tag "Find Chord" %>
+
+
+<% end %>
+
+<p><%= link_to "Progressions Index", progressions_path %></p>

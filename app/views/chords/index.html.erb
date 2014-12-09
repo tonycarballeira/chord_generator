@@ -1,0 +1,11 @@
+Select a chord
+<br>
+
+<% @chords.each do |chord| %>
+	<p>
+		Chord Name: <%= chord[:name] %>
+		<br>
+		Notes: <%= chord[:notes] %>
+	</p>
+	<br>
+<% end %>

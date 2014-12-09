@@ -1,0 +1,29 @@
+<h1>Listing ordered_chords</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Main chord</th>
+      <th>Progessions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ordered_chords.each do |ordered_chord| %>
+      <tr>
+        <td><%= ordered_chord.order %></td>
+        <td><%= ordered_chord.main_chord %></td>
+        <td><%= ordered_chord.progessions %></td>
+        <td><%= link_to 'Show', ordered_chord %></td>
+        <td><%= link_to 'Edit', edit_ordered_chord_path(ordered_chord) %></td>
+        <td><%= link_to 'Destroy', ordered_chord, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ordered chord', new_ordered_chord_path %>

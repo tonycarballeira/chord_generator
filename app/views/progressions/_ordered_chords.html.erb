@@ -1,0 +1,5 @@
+<%= form_for(OrderedChord.new) do |f| %>
+	<%#= f.hidden_field :progression_id, value: progression.id %>
+<%= f.submit %>
+<% end %>
+<%= render partial: 'chords/search_form' %>

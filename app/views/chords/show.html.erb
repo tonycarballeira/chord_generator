@@ -1,0 +1,14 @@
+<h1>Your chord</h1>
+<p>This is the chord you entered:</p>
+<p><%= @your_chord %></p>
+<br/>
+<p>A good following chord for <%= @your_chord %> would be: </p>
+<p><%= @suggestion %> <%= link_to "Add Chord", add_chord_path({chord: @suggestion}) %></p>
+
+<a href="javascript:location.reload();">Dont add chord</a>
+<p><%= session[:progression] %></p>
+<p><%= link_to "Reset Progression", reset_path %></p>
+<p><%= link_to "Save Progression", new_progression_path %> </p>
+
+
+
