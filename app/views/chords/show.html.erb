@@ -4,11 +4,15 @@
 <p><%= @your_chord %></p>
 <br/>
 <p>A good following chord for <%= @your_chord %> would be: </p>
-<p id="suggestion"><%= link_to @suggestion %></p>
+<span id="suggestion" data-chord="<%= @suggestion %>"><%= link_to @suggestion %></span>
 <br/>
 <p> <%= link_to "Add Chord", add_chord_path({chord: @suggestion}) %> <a href="javascript:location.reload();">Dont add chord</a></p>
 <br/>
+
+
 <p>Your chord progression so far is: <%= session[:progression] %></p>
+
+
 <br/>
 <p>Remove Current chord from progression: <%= link_to "Remove", remove_chord_path %> </p>
 <br/>
@@ -18,3 +22,7 @@
 
 
 <%# image_tag "fingerings/#{@suggestion}.jpg", class:"key-image" %>
+
+
+
+

@@ -26,9 +26,12 @@
  //        });
 
 $(function() {
-    $( "#suggestion" ).tooltip({
-    	title: "<img src=\"/assets/fingerings/" + $(this).text() + ".jpg\" />",
-    	html: true
+    $( document ).tooltip({
+    	items: '#suggestion',
+    	content: function() {
+    		var chord = $(this).data()['chord'];
+    		return '<img src="/assets/fingerings/' + chord + '.jpg" alt="' + chord + '">';
+    	}
     });
   });
   

@@ -537,6 +537,9 @@ $(function() {
     // Silly colors
     //
     (function() {
+        if ($('#piano').length == 0) {
+            return;
+        }
         var shouldAnimate = true,
             $piano = $('#piano'),
             W = $piano.width(),
