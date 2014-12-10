@@ -95,7 +95,7 @@ html, body { height: 100%; }
 
 /** header */
 
-h1 {
+#cool {
     position: absolute;
     top: 25px;
     left: 40px;
