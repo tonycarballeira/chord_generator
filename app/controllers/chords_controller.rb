@@ -25,6 +25,8 @@ class ChordsController < ApplicationController
     Chord.all.each do |key|
       if key[:notes].sort == chord
       @your_chord = key[:name]
+      
+
     end
   end
   session[:progression] = [@your_chord]
