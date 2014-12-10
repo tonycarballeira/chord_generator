@@ -21,16 +21,40 @@ class ChordsController < ApplicationController
     
 
     chord = chord_array.sort
-     
+
+    # @your_chord = Chord.from_notes(key[:nptes].sort)
+
+    # Chord.find(chord)
     Chord.all.each do |key|
       if key[:notes].sort == chord
-      @your_chord = key[:name]
-      
-
+        @your_chord = key[:name]
+      end
     end
+     
+     if @your_chord == nil
+        redirect_to chords_search_path and return 
+     else
+        session[:progression] = [@your_chord]
+        redirect_to chord_path(@your_chord)
+     end
+    
+    #     session[:progression] = [@your_chord]
+    #     redirect_to chord_path(@your_chord)
+        
+
+    #   #   session[:progression] = [@your_chord]
+    #   #   redirect_to chord_path(@your_chord)
+    #   # elsif key[:notes].sort != chord
+    #   #      redirect_to chords_search_path
+    #        # return
+    #   end
+    # end
+       
+  
+    
   end
-  session[:progression] = [@your_chord]
-  redirect_to chord_path(@your_chord)
+
+  def generate
     
   end
 

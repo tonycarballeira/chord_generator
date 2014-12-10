@@ -1,27 +1,5 @@
 class Chord
- #  def self.do_search
- #  	# render plain: params\
-
-  	
- #  	chord_array = []
-
- #  	chord_array << params["note1"].upcase 
- #  	chord_array << params["note2"].upcase
- #  	chord_array << params["note3"].upcase
-
-  	
-
- #  	chord = chord_array.sort
-  	 
- #  	Chord.all.each do |key|
- #  		if key[:notes].sort == chord
-	# 		@your_chord = key[:name]
-	# 	end
-	# end
-
-	# redirect_to chord_path(@your_chord)
-  	
- #  end
+ 
 
 	def self.all
 		[
