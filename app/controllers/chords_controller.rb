@@ -55,7 +55,20 @@ class ChordsController < ApplicationController
   end
 
   def generate
-    
+    key = Chord.all.sample
+    @your_chord = key[:name]
+    session[:progression] = [@your_chord]
+    redirect_to chord_path(@your_chord)
+  end
+
+  def remove
+    session[:progression].pop
+    if session[:progression] == []
+      redirect_to chords_search_path
+    else
+    @your_chord = session[:progression].last
+    redirect_to chord_path(@your_chord)
+  end
   end
 
 

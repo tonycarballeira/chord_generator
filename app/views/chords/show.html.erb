@@ -1,18 +1,20 @@
 <h1>Your chord</h1>
 <br/>
-<p>This is the chord you entered:</p>
+<p>Your current chord is:</p>
 <p><%= @your_chord %></p>
 <br/>
 <p>A good following chord for <%= @your_chord %> would be: </p>
-<p><%= @suggestion %></p>
+<p id="suggestion"><%= link_to @suggestion %></p>
 <br/>
 <p> <%= link_to "Add Chord", add_chord_path({chord: @suggestion}) %> <a href="javascript:location.reload();">Dont add chord</a></p>
 <br/>
 <p>Your chord progression so far is: <%= session[:progression] %></p>
 <br/>
-<p></p>
+<p>Remove Current chord from progression: <%= link_to "Remove", remove_chord_path %> </p>
+<br/>
 <p><%= link_to "Reset Progression", reset_path %>  <%= link_to "Save Progression", new_progression_path %></p>
 
  
 
 
+<%# image_tag "fingerings/#{@suggestion}.jpg", class:"key-image" %>

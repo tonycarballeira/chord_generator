@@ -25,3 +25,11 @@
  //            }
  //        });
 
+$(function() {
+    $( "#suggestion" ).tooltip({
+    	title: "<img src=\"/assets/fingerings/" + $(this).text() + ".jpg\" />",
+    	html: true
+    });
+  });
+  
+ 

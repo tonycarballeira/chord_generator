@@ -3,7 +3,7 @@
 
 <h1>Chord Search</h1>
 <br/>
-<p>Please enter the three notes of your chord. Only Major, Minor, Augmented and Diminished Chords.</p>
+<p>Please play the three notes of your triad chord on the piano. Only Major, Minor, Augmented and Diminished Chords.</p>
 <br/>
 <%= form_tag(chords_do_search_path) do %>
 <%= text_field_tag :note1 %>
@@ -12,12 +12,12 @@
 
 <%= submit_tag "Find Chord" %>
 <% end %>
-<%= form_tag(chords_generate_path) do %>
-<%= text_field_tag :note1 %>
-<%= text_field_tag :note2 %>
-<%= text_field_tag :note3 %>
+<br/>
 
-<%= submit_tag "Generate Chord" %>
+
+<%= form_tag(chords_generate_path) do %>
+    
+    <p>If you dont have a chord to start with, here's a freebie: <%= submit_tag "Generate Chord" %></p>
 <% end %>
 
 <br/>

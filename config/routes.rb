@@ -11,9 +11,13 @@ Rails.application.routes.draw do
 
   post 'chords/do_search'
 
+  post 'chords/generate'
+
   get 'add_chord', to: 'chords#add'
 
   get 'reset', to: 'chords#reset'
+
+  get 'remove_chord', to: 'chords#remove'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

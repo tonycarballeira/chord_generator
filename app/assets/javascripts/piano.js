@@ -165,61 +165,61 @@ $(function() {
     });
 
 
-    //
+    
     // Setup keyboard interaction
-    //
+    // tony= got rid of this cuz it blocked certain cpu keys from working
 
-    // var keyNotes = {                           tony= got rid of this cuz it blocked certain cpu keys from working
-    //     /*a*/ 65: 0, // c
-    //     /*w*/ 87: 1, // c#
-    //     /*s*/ 83: 2, // d
-    //     /*e*/ 69: 3, // d#
-    //     /*d*/ 68: 4, // e
-    //     /*f*/ 70: 5, // f
-    //     /*t*/ 84: 6, // f#
-    //     /*g*/ 71: 7, // g
-    //     /*y*/ 89: 8, // g#
-    //     /*h*/ 72: 9, // a
-    //     /*u*/ 85: 10, // a#
-    //     /*j*/ 74: 11, // b
-    //     /*k*/ 75: 12, // c
-    //     /*o*/ 79: 13, // c#
-    //     /*l*/ 76: 14, // d
-    //     /*p*/ 80: 15, // d#
-    //     /*;*/ 186: 16, // e
-    //     /*;*/ 59: 16, // e ... gotta figure out why it's sometimes 186 and sometimes 59
-    //     /*,*/ 222: 17, // f
-    //     /*]*/ 221: 18, // f#
-    //     /*enter*/ 13: 19 // g
-    // };
-    // var notesShift = -12;
-    // var downKeys = {};
+    var keyNotes = {                           
+        /*a*/ 65: 0, // c
+        /*w*/ 87: 1, // c#
+        /*s*/ 83: 2, // d
+        /*e*/ 69: 3, // d#
+        /*d*/ 68: 4, // e
+        /*f*/ 70: 5, // f
+        /*t*/ 84: 6, // f#
+        /*g*/ 71: 7, // g
+        /*y*/ 89: 8, // g#
+        /*h*/ 72: 9, // a
+        /*u*/ 85: 10, // a#
+        /*j*/ 74: 11, // b
+        /*k*/ 75: 12, // c
+        /*o*/ 79: 13, // c#
+        /*l*/ 76: 14, // d
+        /*p*/ 80: 15, // d#
+        /*;*/ 186: 16, // e
+        /*;*/ 59: 16, // e ... gotta figure out why it's sometimes 186 and sometimes 59
+        /*,*/ 222: 17, // f
+        /*]*/ 221: 18, // f#
+        /*enter*/ 13: 19 // g
+    };
+    var notesShift = -12;
+    var downKeys = {};
 
-    // function isModifierKey(evt) {
-    //     return evt.metaKey || evt.shiftKey || evt.altKey;
-    // }
+    function isModifierKey(evt) {
+        return evt.metaKey || evt.shiftKey || evt.altKey;
+    }
 
-    // $(window).keydown(function(evt) {
-    //     var keyCode = evt.keyCode;
-    //     // prevent repeating keys
-    //     if (!downKeys[keyCode] && !isModifierKey(evt)) {
-    //         downKeys[keyCode] = 1;
-    //         var key = keyNotes[keyCode];
-    //         if (typeof key != 'undefined') {
-    //             $keys.trigger('note-'+(key+notesShift+notesOffset)+'.play');
-    //             evt.preventDefault();
-    //         } else if (evt.keyCode == 188) {
-    //             notesShift = -12;
-    //         } else if (evt.keyCode == 190) {
-    //             notesShift = 0;
-    //         } else if (keyCode == 37 || keyCode == 39) {
-    //             notesOffset += (keyCode == 37 ? -1 : 1) * 12;
-    //             buildPiano();
-    //         }
-    //     }
-    // }).keyup(function(evt) {
-    //     delete downKeys[evt.keyCode];
-    // });
+    $(window).keydown(function(evt) {
+        var keyCode = evt.keyCode;
+        // prevent repeating keys
+        if (!downKeys[keyCode] && !isModifierKey(evt)) {
+            downKeys[keyCode] = 1;
+            var key = keyNotes[keyCode];
+            if (typeof key != 'undefined') {
+                $keys.trigger('note-'+(key+notesShift+notesOffset)+'.play');
+                // evt.preventDefault();
+            } else if (evt.keyCode == 188) {
+                notesShift = -12;
+            } else if (evt.keyCode == 190) {
+                notesShift = 0;
+            } else if (keyCode == 37 || keyCode == 39) {
+                notesOffset += (keyCode == 37 ? -1 : 1) * 12;
+                buildPiano();
+            }
+        }
+    }).keyup(function(evt) {
+        delete downKeys[evt.keyCode];
+    });
 
 
     //
@@ -475,10 +475,11 @@ $(function() {
 
 
         };
+        // if (("#note").focus() === false) {
             var key = key + 12;
             console.log(key);
             $("#note" + (chord_array.length)).val(kill[key]);
-        
+        // };
         
         });
 
