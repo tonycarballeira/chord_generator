@@ -4,7 +4,7 @@
 <p><%= @your_chord %></p>
 <br/>
 <p>A good following chord for <%= @your_chord %> would be: </p>
-<span class="suggestion" data-chord="<%= @suggestion %>"><%= link_to @suggestion %></span>
+<span class="suggestion finger" data-chord="<%= @suggestion %>"><%= link_to @suggestion %></span>
 <br/>
 <p> <%= link_to "Add Chord", add_chord_path({chord: @suggestion}) %> <a href="javascript:location.reload();">Dont add chord</a></p>
 <br/>
@@ -14,7 +14,7 @@
 
 <% session[:progression].each do |chord| %>
 <ul>
-  <span class="suggestion" data-chord="<%= chord %>"><%= chord %></span>
+  <span class="suggestion finger" data-chord="<%= chord %>"><%= chord %></span>
 </ul>
 
 <% end %>
@@ -24,7 +24,36 @@
 <br/>
 <p><%= link_to "Reset Progression", reset_path %>  <%= link_to "Save Progression", new_progression_path %></p>
 
- 
+
+<!-- <div id="content">
+            <div id="content-inner">
+                <div id="piano">
+                    <h1 id="cool">Chord Dealer</h1>
+                    <div class="help show" tabindex="1">
+                        <div class="help-inner">
+                            <div id="synth-settings"></div>
+                            <div class="opts">
+                                <p><strong>Controls:</strong></p>
+                                <p>play using home row &amp; above &nbsp; /</p>
+                                <p>change playable keys: “,” &amp; “.” &nbsp; /</p>
+                                <p>shift keyboard: ← &amp; → <span id="shift"></span></p>
+                            </div>
+                            <div class="opts">
+                                <p><strong>Extras:</strong></p>
+                                <p class="toggle-color toggle hold">Color - c &nbsp; /</p>
+                                <p class="toggle-demo toggle">Demo - m &nbsp; /</p>
+                                <p class="toggle-animate toggle">Visual mode - 8 &nbsp; /</p>
+                                <p class="toggle-looper">Looper - 9 &nbsp; /</p>
+                                <p>Help - 0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="loop" tabindex="2">loop</div>
+                </div>
+            </div>
+        </div>
+
+  -->
 
 
 <%# image_tag "fingerings/#{@suggestion}.jpg", class:"key-image" %>

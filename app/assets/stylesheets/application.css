@@ -17,11 +17,25 @@
 
 
 
-.key-image {
-	width: 250px;
+/*.key-image {
+	width: 200px;
 }
 
 label {
 	display: inline-block;
 	width: 5em;
 }
+
+.finger {
+	width: 100px;
+}
+
+body > span > a {
+	width: 200px;
+	height: 20px;
+}
+
+body > ul > span {
+	width: 200px;
+	height: 20px;
+}*/

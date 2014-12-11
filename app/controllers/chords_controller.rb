@@ -32,7 +32,8 @@ class ChordsController < ApplicationController
     end
      
      if @your_chord == nil
-        redirect_to chords_search_path and return 
+        flash[:success] = "Your chord was not a Major, Minor, Diminished, or Augmented chord. Try another or click generate chord."
+        redirect_to chords_search_path 
      else
         session[:progression] = [@your_chord]
         redirect_to chord_path(@your_chord)
