@@ -2,5 +2,13 @@
 
 <%= render 'form' %>
 
+<% @progression.ordered_chords.order(:order).each do |x|%>
+		
+		
+		<span class="suggestion finger" data-chord="<%= x.chord_name %>"><%= x.chord_name %></span><br/>
+
+	
+<% end %>
+
 <%= link_to 'Show', @progression %> |
 <%= link_to 'Back', progressions_path %>

@@ -9,15 +9,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<!-- <nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container">
   </div>
-</nav>
+</nav> -->
+
+<ul><li><%= link_to "Home", chords_search_path  %></li>
+  <li>About</li>
+  <li>
+    <%= link_to "Progressions", progressions_path %>
+    <ul>
+      
+    </ul>
+  </li>
+  <li>Blog</li>
+  <li>Contact</li>
+</ul>
 	<div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
         <% end %>
+        <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 <%= yield %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
+

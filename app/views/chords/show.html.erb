@@ -13,9 +13,9 @@
 <p>Your chord progression so far is: </p>
 
 <% session[:progression].each do |chord| %>
-<ul>
+
   <span class="suggestion finger" data-chord="<%= chord %>"><%= chord %></span>
-</ul>
+
 
 <% end %>
 

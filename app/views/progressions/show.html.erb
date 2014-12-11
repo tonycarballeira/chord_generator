@@ -11,9 +11,9 @@
 </p>
 <% @progression.ordered_chords.order(:order).each do |x|%>
 		
-		<p><%= x.order %></p>
-		<p><%= x.chord_name %></p>
-
+		
+		<span class="suggestion finger" data-chord="<%= x.chord_name %>"><%= x.chord_name %></span><br/>
+		
 	
 <% end %>
 
