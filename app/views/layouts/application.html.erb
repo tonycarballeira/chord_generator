@@ -18,12 +18,10 @@
   <li>About</li>
   <li>
     <%= link_to "Progressions", progressions_path %>
-    <ul>
-      
-    </ul>
+   
   </li>
-  <li>Blog</li>
-  <li>Contact</li>
+  <li><%= render 'devise/menu/registration_items' %></li>
+  <li><%= render 'devise/menu/login_items' %></li>
 </ul>
 	<div class="container">
       <% flash.each do |key, value| %>

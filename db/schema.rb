@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211184856) do
+ActiveRecord::Schema.define(version: 20141211195223) do
 
   create_table "ordered_chords", force: true do |t|
     t.integer  "order"
@@ -28,7 +28,10 @@ ActiveRecord::Schema.define(version: 20141211184856) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "progressions", ["user_id"], name: "index_progressions_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -41,8 +44,6 @@ ActiveRecord::Schema.define(version: 20141211184856) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
