@@ -1,6 +1,6 @@
 class ProgressionsController < ApplicationController
   before_action :set_progression, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /progressions
   # GET /progressions.json
   def index
@@ -30,7 +30,7 @@ class ProgressionsController < ApplicationController
   # POST /progressions.json
   def create
     
-    @progression = Progression.new progression_params 
+    @progression = current_user.progressions.new progression_params 
 
     # @progression.ordered_chords.first.user_id = current_user.id
 
@@ -38,7 +38,7 @@ class ProgressionsController < ApplicationController
       if @progression.save
 
         session[:progression].each_with_index do |chord_name, index|
-          @progression.ordered_chords.create(chord_name: chord_name, order: index)
+        @progression.ordered_chords.create(chord_name: chord_name, order: index)
         end
 
         session[:progression] = []
@@ -84,6 +84,6 @@ class ProgressionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def progression_params
-      params.require(:progression).permit(:name, :description, ordered_chords_attributes: [:order, :chord_name, :progression_id])
+      params.require(:progression).permit(:name, :description, :user_id, ordered_chords_attributes: [:order, :chord_name, :progression_id])
     end
 end

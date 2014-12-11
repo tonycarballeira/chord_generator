@@ -13,11 +13,16 @@
 <p>Your chord progression so far is: </p>
 
 <% session[:progression].each do |chord| %>
-
   <span class="suggestion finger" data-chord="<%= chord %>"><%= chord %></span>
-
-
+  <%= audio_tag chord+".mp3", controls:"controls" %>
 <% end %>
+
+
+<audio controls="controls">
+<% session[:progression].each do |chord| %>
+<%= ("<source src="+chord + ".mp3"+" />").html_safe %>
+<% end %>
+</audio>
 
 <br/>
 <p>Remove Current chord from progression: <%= link_to "Remove", remove_chord_path %> </p>

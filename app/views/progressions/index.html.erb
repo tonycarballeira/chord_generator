@@ -10,7 +10,7 @@
   </thead>
 
   <tbody>
-    <% @progressions.each do |progression| %>
+    <% current_user.progressions.each do |progression| %>
       <tr>
         <td><%= progression.name %></td>
         <td><%= progression.description %></td>

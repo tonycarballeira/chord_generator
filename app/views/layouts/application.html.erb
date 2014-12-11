@@ -16,10 +16,12 @@
 
 <ul><li><%= link_to "Home", chords_search_path  %></li>
   <li>About</li>
+  <% if current_user %>
   <li>
-    <%= link_to "Progressions", progressions_path %>
+    <%= link_to "Progressions", progressions_path  %>
    
   </li>
+  <% end %>
   <li><%= render 'devise/menu/registration_items' %></li>
   <li><%= render 'devise/menu/login_items' %></li>
 </ul>

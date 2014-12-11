@@ -4,4 +4,6 @@ class Progression < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates_associated :ordered_chords
+
+	belongs_to :user
 end
