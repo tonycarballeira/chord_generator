@@ -27,7 +27,7 @@
 
 $(function() {
     $( document ).tooltip({
-    	items: '#suggestion',
+    	items: '.suggestion',
     	content: function() {
     		var chord = $(this).data()['chord'];
     		return '<img src="/assets/fingerings/' + chord + '.jpg" alt="' + chord + '">';
