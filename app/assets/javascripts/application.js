@@ -33,6 +33,15 @@ $(function() {
     		return '<img src="/assets/fingerings/' + chord + '.jpg" alt="' + chord + '">';
     	}
     });
-  });
-  
- 
+
+$(".chordbox").each(function(b) {
+	$(this).find(".finger").on("click", function( e ) {
+		$(".sm-audio").each(function(b){
+			$(this).get(0).pause();
+			});
+		$(this).currentTime = 0;
+		$(this).closest(".chordbox").find(".sm-audio").get(0).play();
+		});
+	});
+
+});

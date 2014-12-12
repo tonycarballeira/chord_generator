@@ -103,7 +103,21 @@ element.style {
 	height: 0px
 }
 
-/*span {
-display:inline-block; 
-width: 100%;
-}*/
+.sm-audio {
+	max-width: 45px;
+}
+.chordbox {
+	text-align: center;
+	display: inline;
+	width: 50px;
+}
+.chordbox * {
+	
+}
+
+.finger{
+  cursor: pointer;
+}
+
+
+

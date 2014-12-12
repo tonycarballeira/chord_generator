@@ -1,28 +1,45 @@
 <h1>Your chord</h1>
 <br/>
 <p>Your current chord is:</p>
-<p><%= @your_chord %></p>
+<!-- <p><%= @your_chord %></p> -->
+<br/>
+<div class="chordbox">
+		<button class="btn-sm btn-default"><span class="suggestion finger" data-chord="<%= @your_chord %>" id="<%= @your_chord %>"><%= @your_chord %></span></button>
+		 	<br/>
+		<%= audio_tag @your_chord.to_s + ".mp3", controls:"controls", class:"sm-audio hidden" %>
+		<br/>
+	</div>
 <br/>
 <p>A good following chord for <%= @your_chord %> would be: </p>
-<span class="suggestion finger" data-chord="<%= @suggestion %>"><%= link_to @suggestion %></span>
 <br/>
-<p> <%= link_to "Add Chord", add_chord_path({chord: @suggestion}) %> <a href="javascript:location.reload();">Dont add chord</a></p>
+<!--  <span class="suggestion finger" data-chord="<%= @suggestion %>"><%= link_to @suggestion %></span>   -->
+
+<div class="chordbox">
+		<button class="btn-sm btn-default"><span class="suggestion finger" data-chord="<%= @suggestion %>" id="<%= @suggestion %>"><%= @suggestion %></span></button>
+		 	<br/>
+		<%= audio_tag @suggestion.to_s + ".mp3", controls:"controls", class:"sm-audio hidden" %>
+		<br/>
+	</div>
+
+ 
+<br/>
+<p> <%= link_to "Add Chord", add_chord_path({chord: @suggestion}) %> <a href="javascript:location.reload();">New suggestion</a></p>
 <br/>
 
 
 <p>Your chord progression so far is: </p>
+<br/>
 
 <% session[:progression].each do |chord| %>
-  <span class="suggestion finger" data-chord="<%= chord %>"><%= chord %></span>
-  <%= audio_tag chord+".mp3", controls:"controls" %>
+	<div class="chordbox">
+		<button class="btn-sm btn-default"><span class="suggestion finger" data-chord="<%= chord %>" id="<%= chord %>"><%= chord %></span></button>
+		 	
+		<%= audio_tag chord+".mp3", controls:"controls", class:"sm-audio hidden" %>
+		
+	</div>
 <% end %>
 
 
-<audio controls="controls">
-<% session[:progression].each do |chord| %>
-<%= ("<source src="+chord + ".mp3"+" />").html_safe %>
-<% end %>
-</audio>
 
 <br/>
 <p>Remove Current chord from progression: <%= link_to "Remove", remove_chord_path %> </p>
