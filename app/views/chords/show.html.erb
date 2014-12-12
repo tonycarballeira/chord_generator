@@ -1,3 +1,4 @@
+<br/>
 <h1>Your chord</h1>
 <br/>
 <p>Your current chord is:</p>
@@ -30,22 +31,20 @@
 <p>Your chord progression so far is: </p>
 <br/>
 
-<% session[:progression].each do |chord| %>
-	<div class="chordbox">
-		<button class="btn-sm btn-default finger"><span class="suggestion finger" data-chord="<%= chord %>" id="<%= chord %>"><%= chord %></span></button>
-		 	
-		<%= audio_tag chord+".mp3", controls:"controls", class:"sm-audio hidden" %>
-		
-	</div>
-<% end %>
-
-
-
+<div class="progression">
+<button class="progress">Play</button>
+	<% session[:progression].each do |chord| %>
+		<div class="chordbox">
+			<button class="btn-sm btn-default finger"><span class="suggestion finger" data-chord="<%= chord %>" id="<%= chord %>"><%= chord %></span></button>
+			<%= audio_tag chord+".mp3", controls:"controls", class:"sm-audio hidden" %>
+		</div>
+	<% end %>
+</div>
 <br/>
 <p>Remove Current chord from progression: <%= link_to "Remove", remove_chord_path %> </p>
 <br/>
 <p><%= link_to "Reset Progression", reset_path %>  <%= link_to "Save Progression", new_progression_path %></p>
-
+<br/>
 
 <div id="content">
             <div id="content-inner">

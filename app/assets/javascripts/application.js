@@ -39,4 +39,18 @@ $(".chordbox").each(function(b) {
 		$(this).closest(".chordbox").find(".sm-audio").get(0).play();
 		});
 	});
+
+	// $(".progress").on("click", function( e ) {
+	// 	e.preventDefault
+
+	// 	$(".sm-audio").each(function(b){
+	// 		var target = $(this)
+	// 		function playAudio(){
+	// 		target.get(0).play(setTimeout(1000));	
+	// 		}
+	// 		// window.setTimeout(playAudio(), 1000);
+	// 		});
+	// 	});
 });
+
+
