@@ -4,7 +4,7 @@
 <!-- <p><%= @your_chord %></p> -->
 <br/>
 <div class="chordbox">
-		<button class="btn-sm btn-default"><span class="suggestion finger" data-chord="<%= @your_chord %>" id="<%= @your_chord %>"><%= @your_chord %></span></button>
+		<button class="btn-sm btn-default finger"><span class="suggestion finger" data-chord="<%= @your_chord %>" id="<%= @your_chord %>"><%= @your_chord %></span></button>
 		 	<br/>
 		<%= audio_tag @your_chord.to_s + ".mp3", controls:"controls", class:"sm-audio hidden" %>
 		<br/>
@@ -15,7 +15,7 @@
 <!--  <span class="suggestion finger" data-chord="<%= @suggestion %>"><%= link_to @suggestion %></span>   -->
 
 <div class="chordbox">
-		<button class="btn-sm btn-default"><span class="suggestion finger" data-chord="<%= @suggestion %>" id="<%= @suggestion %>"><%= @suggestion %></span></button>
+		<button class="btn-sm btn-default finger"><span class="suggestion finger" data-chord="<%= @suggestion %>" id="<%= @suggestion %>"><%= @suggestion %></span></button>
 		 	<br/>
 		<%= audio_tag @suggestion.to_s + ".mp3", controls:"controls", class:"sm-audio hidden" %>
 		<br/>
@@ -32,7 +32,7 @@
 
 <% session[:progression].each do |chord| %>
 	<div class="chordbox">
-		<button class="btn-sm btn-default"><span class="suggestion finger" data-chord="<%= chord %>" id="<%= chord %>"><%= chord %></span></button>
+		<button class="btn-sm btn-default finger"><span class="suggestion finger" data-chord="<%= chord %>" id="<%= chord %>"><%= chord %></span></button>
 		 	
 		<%= audio_tag chord+".mp3", controls:"controls", class:"sm-audio hidden" %>
 		
@@ -47,7 +47,7 @@
 <p><%= link_to "Reset Progression", reset_path %>  <%= link_to "Save Progression", new_progression_path %></p>
 
 
-<!-- <div id="content">
+<div id="content">
             <div id="content-inner">
                 <div id="piano">
                     <h1 id="cool">Chord Dealer</h1>
@@ -75,11 +75,7 @@
             </div>
         </div>
 
-  -->
+ 
 
 
 <%# image_tag "fingerings/#{@suggestion}.jpg", class:"key-image" %>
-
-
-
-
