@@ -40,17 +40,19 @@ $(".chordbox").each(function(b) {
 		});
 	});
 
-	// $(".progress").on("click", function( e ) {
-	// 	e.preventDefault
+	$(".progress").on("click", function( e ) {
+		e.preventDefault
 
-	// 	$(".sm-audio").each(function(b){
-	// 		var target = $(this)
-	// 		function playAudio(){
-	// 		target.get(0).play(setTimeout(1000));	
-	// 		}
-	// 		// window.setTimeout(playAudio(), 1000);
-	// 		});
-	// 	});
+	$(".prog").each(function(delay_length){
+		console.log('timeout', delay_length);
+		setTimeout(play_audio, delay_length * 1000, this);
+	});
+
+	function play_audio(audio) {
+		console.log("play", audio);
+		audio.play();
+	}
+	});
 });
 
 

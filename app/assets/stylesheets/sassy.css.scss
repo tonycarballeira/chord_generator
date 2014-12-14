@@ -1,0 +1,57 @@
+
+
+
+
+$blue : #22475E  ;
+$yellow : #4C4A30  ;
+$red : #421D26  ;
+$radius : 5px;
+
+
+/*html, body, body > div.container {
+animation: bg 30s linear infinite;
+-webkit-animation: bg 30s linear infinite;
+background: $blue;
+}
+*/
+/*.key.black:after{
+animation: bg 2s linear infinite;
+-webkit-animation: bg 2s linear infinite;
+background: $yellow;
+}
+
+
+
+@keyframes bg {
+from, to { background: $blue; }
+33% { background: $yellow;  }
+66% { background: $red;  }
+}
+
+@-webkit-keyframes bg {
+from, to { background: $blue;  }
+33% { background: $yellow;  }
+66% { background: $red; }
+
+}
+
+ a, input[type="submit"], .finger, .progress {
+animation: pg 2s linear infinite;
+-webkit-animation: pg 2s linear infinite;
+color: $yellow;
+}
+
+
+@keyframes pg {
+from, to { color: $blue; }
+33% { color: $yellow; }
+66% { color: $red; }
+}
+
+@-webkit-keyframes pg {
+from, to { color: $blue; }
+33% { color: $yellow; }
+66% { color: $red;}
+
+}
+*/

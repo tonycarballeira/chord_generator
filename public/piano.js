@@ -1,39 +1,41 @@
 /*! Copyright (c) 2013 - Peter Coles (mrcoles.com)
  *  Licensed under the MIT license: http://mrcoles.com/media/mit-license.txt
  */
- var chord_array = [];
-
- var kill = {
-     0:"C",
-     1:"C#",
-     2:"D",
-     3:"D#",
-     4:"E",
-     5:"F",
-     6:"F#",
-     7:"G",
-     8:"G#",
-     9:"A",
-     10:"A#",
-     11:"B",
-     12:"C",
-     13:"C#",
-     14:"D",
-     15:"D#",
-     16:"E",
-     17:"F",
-     18:"F#",
-     19:"G",
-     20:"G#",
-     21:"A",
-     22:"A#",
-     23:"B",
-     24:"C",
-     25:"C#"
- };
+(function() {
 
 
-$(function() {
+// var chord_array = [];
+
+ // var kill = {
+ //     0:"C",
+ //     1:"C#",
+ //     2:"D",
+ //     3:"D#",
+ //     4:"E",
+ //     5:"F",
+ //     6:"F#",
+ //     7:"G",
+ //     8:"G#",
+ //     9:"A",
+ //     10:"A#",
+ //     11:"B",
+ //     12:"C",
+ //     13:"C#",
+ //     14:"D",
+ //     15:"D#",
+ //     16:"E",
+ //     17:"F",
+ //     18:"F#",
+ //     19:"G",
+ //     20:"G#",
+ //     21:"A",
+ //     22:"A#",
+ //     23:"B",
+ //     24:"C",
+ //     25:"C#"
+ // };
+
+
 
     //
     // Setup keys!
@@ -57,6 +59,7 @@ $(function() {
     }
 
     var $keys = $('<div>', {'class': 'keys'}).appendTo('#piano');
+    window.piano_keys = $keys;
 
     var buildingPiano = false;
 
@@ -461,26 +464,23 @@ $(function() {
 
         $keys.on('played-note.piano', function(evt, key) {
            
-            chord_array.push(key)
-            var key = key
+            //chord_array.push(key)
+            //var key = key
 
-            console.log(evt, key, "Logging", chord_array);
+            //console.log(evt, key, "Logging", chord_array);
             if (recording) {
                 data.push({'key': key, 'time': new Date().getTime()});
 
             }
-            if (chord_array.length == 4) {
-                console.log(chord_array)
-                chord_array = []
-
-
-        };
-        // if (("#note").focus() === false) {
-            var key = key + 12;
-            console.log(key);
-            $("#note" + (chord_array.length)).val(kill[key]);
-        // };
-        
+            //if (chord_array.length == 4) {
+            //    console.log(chord_array)
+            //    chord_array = []
+            //};
+            // if (("#note").focus()) {
+              // var key = key + 12;
+              // console.log(key);
+              // $("#note" + (chord_array.length)).val(kill[key]);
+            // };
         });
 
         function recordStart() {
@@ -754,4 +754,4 @@ $(function() {
     // }
     // generateFilesForDL();
 
-});
+})();

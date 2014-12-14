@@ -97,7 +97,7 @@ class ChordsController < ApplicationController
 
     def reset
       session[:progression] = nil
-      redirect_to chords_search_path
+      redirect_to chords_search_path 
     end
   
 end

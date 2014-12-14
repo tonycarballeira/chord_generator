@@ -1,4 +1,4 @@
-/*
+
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -12,7 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ 
  */
+
+ 
 
 
 
@@ -23,7 +26,7 @@ body > div.container > div.alert.alert-success {
 }
 
 #piano {
-	background-color: black;
+	/*background-color: black;*/
 }
 
 body {
@@ -31,8 +34,8 @@ body {
   padding: 20px 50px 150px;
   font-size: 13px;
   text-align: center;
-  background: #E3CAA1;
-  background-color: #AFC6BE;
+  /*background: #E3CAA1;
+  background-color: #AFC6BE;*/
 }
 
 ul {
@@ -51,7 +54,7 @@ ul li {
   margin-right: -4px;
   position: relative;
   padding: 15px 20px;
-  background: #fff;
+  /*background: #fff;*/
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -95,7 +98,7 @@ ul li:hover ul {
 }
 
 body > div.container{
-	background-color: #AFC6BE;
+	/*background-color: #AFC6BE;*/
 }
 
 element.style {
@@ -123,11 +126,11 @@ element.style {
 
 
 html {
-  background-color: #AFC6BE;
+  /*background-color: #AFC6BE;*/
 }
 
 body > div.container > div > div > button {
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 button {
@@ -135,5 +138,72 @@ button {
 }
 
 .btn-sm, .btn-group-sm>.btn {
-  border-radius: 20px;
+  border-radius: 10px;
 }
+
+body > div.container > div:nth-child(2) > h1 {
+  color:black;
+}
+
+body > div.container > div:nth-child(2) > p {
+  color:black;
+}
+
+ p {
+  color:white;
+}
+
+body > div.container > div:nth-child(2) > form:nth-child(7) > p > input[type="submit"] {
+  color: #E65A96;
+  background-color:#F7E6A3;
+  border-color: #F7E6A3;
+  border-radius: 3px;
+}
+
+/*body > div.container > div:nth-child(3) > form:nth-child(5) > input[type="submit"]:nth-child(5) {
+  background-color: #EA2DA7;
+}
+*/
+h1 {
+  color:black;
+}
+
+p {
+  color:black ;
+}
+
+body > div.container > div:nth-child(2) > form:nth-child(5) > input[type="submit"]:nth-child(5) {
+  color: #E65A96;
+  background-color:#F7E6A3;
+  border-color: #F7E6A3;
+  border-radius: 3px;
+}
+
+body > ul {
+  color: white;
+  background-color:#F7E6A3;
+}
+
+a {
+  color:#E65A96;
+  background: none;
+
+}
+
+a:hover{
+  color:#E65A96;
+  text-decoration: none;
+}
+body {
+  background-color: #C4CFC7;
+}
+
+html {
+  background-color: #C4CFC7;
+}
+
+.finger {
+  background-color: #F7E6A3;
+}
+
+
