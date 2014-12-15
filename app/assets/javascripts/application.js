@@ -40,7 +40,7 @@ $(".chordbox").each(function(b) {
 		});
 	});
 
-	$(".progress").on("click", function( e ) {
+	$(".progress-play").on("click", function( e ) {
 		console.log("progress clicked");
 		e.preventDefault
 

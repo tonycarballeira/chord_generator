@@ -1,12 +1,14 @@
-<br/>
+<%= render partial: 'piano' %>
+
+
 <!-- <h1>Your chord</h1> -->
 <br/>
-
+<div class="well">
 <!-- <p><%= @your_chord %></p> -->
 <!-- <br/> -->
 <div class="chordbox chord5">
 	<p>Your current chord is:</p>
-		<button class="btn-sm btn-default finger"><span class="suggestion finger" data-chord="<%= @your_chord %>" id="<%= @your_chord %>"><%= @your_chord %></span></button>
+		<button type="button" class="btn btn-info finger"><span class="suggestion finger" data-chord="<%= @your_chord %>" id="<%= @your_chord %>"><%= @your_chord %></span></button>
 		 	<br/>
 		<%= audio_tag @your_chord.to_s + ".mp3", controls:"controls", class:"sm-audio hidden" %>
 		<br/>
@@ -18,14 +20,14 @@
 
 <div class="chordbox chord4">
 	<p>A good following chord for <%= @your_chord %> would be: </p>
-		<button class="btn-sm btn-default finger"><span class="suggestion finger" data-chord="<%= @suggestion %>" id="<%= @suggestion %>"><%= @suggestion %></span></button>
+		<button class="btn btn-info finger"><span class="suggestion finger" data-chord="<%= @suggestion %>" id="<%= @suggestion %>"><%= @suggestion %></span></button>
 		 	<br/>
 		<%= audio_tag @suggestion.to_s + ".mp3", controls:"controls", class:"sm-audio hidden" %>
 		<br/>
 	</div>
  
 <br/>
-<div class="add"><p> <%= link_to "Add Chord", add_chord_path({chord: @suggestion}) %></p></div><div class="add"><p> <a href="javascript:location.reload();">New suggestion</a></p></div>
+<div class="add"><p> <%= link_to "Add Chord", add_chord_path({chord: @suggestion}), class:"btn btn-success" %></p></div><div class="add"><p> <a class="btn btn-warning" href="javascript:location.reload();">New suggestion</a></p></div>
 <br/>
 
 
@@ -33,21 +35,22 @@
 <br/>
 
 <div class="progression">
-<button class="progress">Play</button>
+<button class="progress-play btn btn-default">Play</button>
 	<% session[:progression].each do |chord| %>
 		<div class="chordbox">
-			<button class="btn-sm btn-default finger"><span class="suggestion finger" data-chord="<%= chord %>" id="<%= chord %>"><%= chord %></span></button>
+			<button class="btn btn-info finger"><span class="suggestion finger" data-chord="<%= chord %>" id="<%= chord %>"><%= chord %></span></button>
 			<%= audio_tag chord+".mp3", controls:"controls", class:"sm-audio hidden prog" %>
 		</div>
 	<% end %>
 </div>
 <br/>
-<p>Remove Current chord from progression: <%= link_to "Remove", remove_chord_path %> </p>
+<p>Remove Current chord from progression: <%= link_to "X", remove_chord_path, class:"btn btn-danger btn-sm" %> </p>
 <br/>
-<p><%= link_to "Reset Progression", reset_path %>  <%= link_to "Save Progression", new_progression_path %></p>
+<p><%= link_to "Reset Progression", reset_path, class:"btn btn-danger" %>  
+<%= link_to "Save Progression", new_progression_path, class:"btn btn-primary" %></p>
+</div>
 
 
-<%= render partial: 'piano' %>
 
  
 <script>
@@ -66,7 +69,7 @@ $(".chordbox").each(function(b) {
 		});
 	});
 
-	$(".progress").on("click", function( e ) {
+	$(".progress-play").on("click", function( e ) {
 		e.preventDefault
 
 	$(".prog").each(function(delay_length){
@@ -82,5 +85,5 @@ $(".chordbox").each(function(b) {
 });
 
 
-
+	
 </script>
