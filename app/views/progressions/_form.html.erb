@@ -15,18 +15,19 @@
 
 <!-- <p><%#= session[:progression] %></p> -->
 
+<div class="row">
+  <div class="col-md-offset-2">
+      <%= f.text_field :name, placeholder:"Progression name...", class:"form-control", id:"progression-name" %>
+    </div>
+</div>
 
-<div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="row">
+    <div class="col-md-offset-2">
+      <%= f.text_area :description, class:"form-control", id:"progression-details" %>
+    </div>
+    </div>
+<div class="row">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

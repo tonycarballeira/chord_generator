@@ -41,6 +41,7 @@ $(".chordbox").each(function(b) {
 	});
 
 	$(".progress").on("click", function( e ) {
+		console.log("progress clicked");
 		e.preventDefault
 
 	$(".prog").each(function(delay_length){

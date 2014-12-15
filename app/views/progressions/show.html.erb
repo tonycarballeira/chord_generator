@@ -9,16 +9,57 @@
   <strong>Description:</strong>
   <%= @progression.description %>
 </p>
+
+<div class="progression">
+<button class="progress">Play</button>
 <% @progression.ordered_chords.order(:order).each do |x|%>
 		
 		
-		<span class="suggestion finger" data-chord="<%= x.chord_name %>"><%= x.chord_name %></span><br/>
-		
-	
+		<div class="chordbox chord5">
+		<button class="btn-sm btn-default finger"><span class="suggestion finger" data-chord="<%= x.chord_name %>" id="<%= x.chord_name %>"><%= x.chord_name %></span></button>
+		 	<br/>
+		<%= audio_tag x.chord_name.to_s + ".mp3", controls:"controls", class:"sm-audio hidden prog" %>
+		</div>
 <% end %>
-
+</div>
 
 
 
 <%= link_to 'Edit', edit_progression_path(@progression) %> |
 <%= link_to 'Back', progressions_path %>
+
+
+<script>
+$(function() {
+    $( document ).tooltip({
+    	items: '.suggestion',
+    	content: function() {
+    		var chord = $(this).data()['chord'];
+    		return '<img src="/assets/fingerings/' + chord + '.jpg" alt="' + chord + '">';
+    	}
+    });
+$(".chordbox").each(function(b) {
+	$(this).find(".finger").on("click", function( e ) {
+		e.preventDefault
+		$(this).closest(".chordbox").find(".sm-audio").get(0).play();
+		});
+	});
+
+	$(".progress").on("click", function( e ) {
+		e.preventDefault
+
+	$(".prog").each(function(delay_length){
+		console.log('timeout', delay_length);
+		setTimeout(play_audio, delay_length * 1000, this);
+	});
+
+	function play_audio(audio) {
+		console.log("play", audio);
+		audio.play();
+	}
+	});
+});
+
+
+
+</script>

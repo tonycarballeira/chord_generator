@@ -335,7 +335,5 @@ class Chord
 ]
 	end
 
-	def identify
-		
-	end
+
 end

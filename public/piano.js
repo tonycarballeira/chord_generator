@@ -550,8 +550,8 @@
                     top: ($piano.offset().top + $piano.outerHeight() - 1) + 'px',
                     left: '50%',
                     marginLeft: Math.floor(-W/2) + 'px', // need to figure this out...
-                    width: W,
-                    height: H
+                    width: 400,
+                    height: 0
                 }
             })
             .attr('width', W)
