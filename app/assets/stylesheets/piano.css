@@ -4,16 +4,16 @@
 
 html,body,div,span,h1,p{margin:0;padding:0;}
 
-/*html {
-    /*background: #fff;*/
-   /* font: normal 14px/24px futura, Helvetica, Arial, sans serif;
-    color: #999;*/
-/*}*/
+html {
+    background: #fff;
+    font: normal 14px/24px futura, Helvetica, Arial, sans serif;
+    color: #999;
+}
 
 strong { font-weight: normal; }
 a { text-decoration: none; }
 
-/*html, body { height: 100%; }*/
+html, body { height: 100%; }
 
 #content {
     min-height: 100%;
@@ -30,12 +30,10 @@ a { text-decoration: none; }
     margin: 0 auto;
     padding: 80px 40px 16px;
     width: 865px;
-    /*background: #f33;*/
-    /*border-radius: 20px;*/
-    /*box-shadow: 0 1px 0 #999, 0 2px 0 #999, 0 3px 0 #999, 1px 4px 0 #999, 2px 5px 0 #999, 3px 6px 0 #999, 4px 7px 0 #999, 5px 8px 0 #999, 0 0 8px #000;*/
+    background: #f33;
+    border-radius: 20px;
+    box-shadow: 0 1px 0 #999, 0 2px 0 #999, 0 3px 0 #999, 1px 4px 0 #999, 2px 5px 0 #999, 3px 6px 0 #999, 4px 7px 0 #999, 5px 8px 0 #999, 0 0 8px #000;
     z-index: 2;
-    background-color: ;
-    border:20px;
 }
 
 
@@ -89,7 +87,7 @@ a { text-decoration: none; }
 }
 .key.black.pressed:after,
 .key.black:active:after {
-    background-color: #white;
+    background-color: #222;
 }
 
 /* **/
@@ -280,13 +278,4 @@ a { text-decoration: none; }
     line-height: 20px;
     text-align: center;
     z-index: 999;
-}
-
-element.style {
-    top:0px;
-    height: 0px
-}
-
-body > canvas {
-    top: 0px;
 }

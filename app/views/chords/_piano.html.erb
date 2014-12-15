@@ -26,24 +26,5 @@
             </div>
         </div>
 
-        <script>
 
-window.piano_keys.on('played-note.piano', function(evt, key) {
-        console.log("piano note played", evt, key);
-
-        chord_array.push(key)
-        if (chord_array.length == 4) {
-            console.log(chord_array)
-            chord_array = []
-        };
-
-         
-            var key = key + 12;
-            console.log(key);
-            $("#note" + (chord_array.length)).val(kill[key]);
-        
-    });
-});
-
-</script>
 
