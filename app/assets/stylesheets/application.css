@@ -121,7 +121,15 @@ table.gridtable td {
 
 
 
+.butt3 {
+  padding-right:20px;
+  position: inline;
+}
 
+.butt4 {
+  padding-left:20px;
+  position: inline;
+}
 
 
 
@@ -130,4 +138,8 @@ table.gridtable td {
 }
 .navbar {
   position: relative;
+}
+
+.forever {
+  position:inline;
 }

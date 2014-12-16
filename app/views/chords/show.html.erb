@@ -27,7 +27,7 @@
 	</div>
  
 <br/>
-<div class="add"><p> <%= link_to "Add Chord", add_chord_path({chord: @suggestion}), class:"btn btn-success" %></p></div><div class="add"><p> <a class="btn btn-warning" href="javascript:location.reload();">New suggestion</a></p></div>
+<div><span> <%= link_to "Add Chord", add_chord_path({chord: @suggestion}), class:"btn btn-success" %></span><span> <a class="btn btn-warning" href="javascript:location.reload();">New suggestion</a></span></div>
 <br/>
 
 
@@ -46,8 +46,10 @@
 <br/>
 <p>Remove Current chord from progression: <%= link_to "X", remove_chord_path, class:"btn btn-danger btn-sm" %> </p>
 <br/>
-<p><%= link_to "Reset Progression", reset_path, class:"btn btn-danger" %>  
-<%= link_to "Save Progression", new_progression_path, class:"btn btn-primary" %></p>
+<div>
+<span class="butt2"><%= link_to "Save Progression", new_progression_path, class:"btn btn-success" %></span>
+<span class="butt"><%= link_to "Reset Progression", reset_path, class:"btn btn-warning" %> </span> 
+</div>
 </div>
 
 
