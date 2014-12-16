@@ -8,6 +8,7 @@
 <!-- <br/> -->
 <div class="chordbox chord5">
 	<p>Your current chord is:</p>
+	<br/>
 		<button type="button" class="btn btn-info finger"><span class="suggestion finger" data-chord="<%= @your_chord %>" id="<%= @your_chord %>"><%= @your_chord %></span></button>
 		 	<br/>
 		<%= audio_tag @your_chord.to_s + ".mp3", controls:"controls", class:"sm-audio hidden" %>
@@ -20,6 +21,7 @@
 
 <div class="chordbox chord4">
 	<p>A good following chord for <%= @your_chord %> would be: </p>
+	<br/>	
 		<button class="btn btn-info finger"><span class="suggestion finger" data-chord="<%= @suggestion %>" id="<%= @suggestion %>"><%= @suggestion %></span></button>
 		 	<br/>
 		<%= audio_tag @suggestion.to_s + ".mp3", controls:"controls", class:"sm-audio hidden" %>

@@ -143,3 +143,15 @@ table.gridtable td {
 .forever {
   position:inline;
 }
+
+.call {
+  bottom:0;
+  left:0;
+  position:static;
+  width:100%;
+  margin-bottom: 0;
+}
+
+#progression-index{
+  height: 92vh;
+}
