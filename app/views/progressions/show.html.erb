@@ -1,3 +1,7 @@
+<div id="progression-index">
+<h1>Chord Progression</h1>
+<br/>
+<div class="well">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -5,30 +9,36 @@
   <%= @progression.name %>
 </p>
 
+
 <p>
   <strong>Description:</strong>
   <%= @progression.description %>
 </p>
 
 <div class="progression">
-<button class="progress">Play</button>
+<br/>
+<button class="progress-play btn btn-default">Play</button>
+<br/>
+		<ul class="list-inline">
 <% @progression.ordered_chords.order(:order).each do |x|%>
 		
-		
-		<div class="chordbox chord5">
-		<button class="btn-sm btn-default finger"><span class="suggestion finger" data-chord="<%= x.chord_name %>" id="<%= x.chord_name %>"><%= x.chord_name %></span></button>
-		 	<br/>
+		<li>
+		<div class="chordbox">
+		<button class="btn btn-info finger"><span class="suggestion finger" data-chord="<%= x.chord_name %>" id="<%= x.chord_name %>"><%= x.chord_name %></span></button>
+		 	
 		<%= audio_tag x.chord_name.to_s + ".mp3", controls:"controls", class:"sm-audio hidden prog" %>
 		</div>
+		</li>
 <% end %>
+		</ul>
 </div>
 
 
 
 <%= link_to 'Edit', edit_progression_path(@progression) %> |
 <%= link_to 'Back', progressions_path %>
-
-
+</div>
+</div>	
 <script>
 $(function() {
     $( document ).tooltip({
@@ -63,3 +73,4 @@ $(".chordbox").each(function(b) {
 
 
 </script>
+

@@ -59,8 +59,8 @@
     }
 
     var $keys = $('<div>', {'class': 'keys'}).appendTo('#piano');
-    window.piano_keys = $keys;
-
+    setupPiano($keys);
+    
     var buildingPiano = false;
 
     var isIos = navigator.userAgent.match(/(iPhone|iPad)/i);

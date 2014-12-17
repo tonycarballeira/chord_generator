@@ -1,4 +1,8 @@
-$(function() {
+//$(document).on("ready page:load", setupPiano);
+
+function setupPiano(pianoKeys){
+	//console.log('setupPiano', pianoKeys);
+
 	var chord_array = [];
 
 	var kill = {
@@ -30,8 +34,8 @@ $(function() {
 	     25:"C#"
 	};
 
-	window.piano_keys.on('played-note.piano', function(evt, key) {
-		console.log("piano note played", evt, key);
+	pianoKeys.on('played-note.piano', function(evt, key) {
+		//console.log("piano note played", evt, key);
 
 		chord_array.push(key)
 		if (chord_array.length == 4) {
@@ -39,10 +43,12 @@ $(function() {
 			chord_array = []
 		};
 
-         
-         	var key = key + 12;
-         	console.log(key);
-         	$("#note" + (chord_array.length)).val(kill[key]);
-        
+		var key = key + 12;
+		//console.log(key);
+		$("#note" + (chord_array.length)).val(kill[key]);
+
+		$("#note" + (chord_array.length)).val(kill[key]);
+
+		$("#bignote" + (chord_array.length)).html(kill[key]);
     });
-});
+};

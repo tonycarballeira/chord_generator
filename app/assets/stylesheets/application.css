@@ -18,8 +18,8 @@
 
 
 body > div.container > div.alert.alert-success {
-	background-color: #E56264;
-	color: white;
+	
+	color: gray;
 }
 
 #piano {
@@ -52,13 +52,13 @@ element.style {
 	width: 50px;
   
   
+  
 }
-.chordbox * {
-	
-}
+
 
 .finger{
   cursor: pointer;
+  display: inline;
 }
 
 
@@ -90,9 +90,8 @@ table.gridtable {
   /*margin-top: 200px;*/
   margin: 0 auto;
   
-
-
 }
+
 table.gridtable th {
   border-width: 0px;
   padding: 8px;
@@ -101,6 +100,7 @@ table.gridtable th {
   background-color: #dedede;
 
 }
+
 table.gridtable td {
   border-width: 1px;
   padding: 8px;
@@ -113,10 +113,13 @@ table.gridtable td {
 #progression-details {
   width: 700px;
   max-width: 700px; 
+  margin-left:70px;
+  height:250px;
 }
 
 #progression-name {
   width: 700px;
+  margin-left: 70px;
 }
 
 
@@ -154,4 +157,15 @@ table.gridtable td {
 
 #progression-index{
   height: 92vh;
+}
+
+#bignote1, #bignote2, #bignote3 {
+  font-weight:bold;
+  display:inline;
+  font-size: 100px;
+  color:green;
+}
+
+.navbar-inverse .navbar-brand {
+  color:green;
 }

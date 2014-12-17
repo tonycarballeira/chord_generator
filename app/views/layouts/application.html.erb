@@ -10,30 +10,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-
-
-	<div class="container">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-        <% end %>
-        <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-</div>
-<%= yield %>
-
-
-  
-</ul>
 <nav class="navbar navbar-inverse call" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <%= link_to "Home", chords_search_path, class:"navbar-brand" %>
+      <%= link_to "Chord Buddy", chords_search_path, class:"navbar-brand ham" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,6 +31,25 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<br/>
+
+
+  <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key == "notice" ? "success" : "danger" %>"><%= value %></div>
+        <% end %>
+        
+        <!--notice = success -->
+        <!-- SUCCESS = danger -->
+  
+</div>
+<%= yield %>
+
+
+  
+
+
 
 <%= javascript_include_tag '/piano.js'%>
 </body>

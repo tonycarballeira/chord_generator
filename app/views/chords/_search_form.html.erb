@@ -1,27 +1,32 @@
+
     <br/>
     <div class="note-form">
 <div class="well">
-	<h1>Chord Search</h1>
+	<h1 class="mono">Chord Search</h1>
 	<br/>
 	<p>Please play the three notes of your triad chord on the piano. Only Major, Minor, Augmented and Diminished Chords.</p>
 	<br/>
+	<div id="bignote1"></div>
+	<div id="bignote2"></div>
+	<div id="bignote3"></div>
 	<div class="row">
-	<div class="col-md-4 col-md-offset-4">
-	<%= form_tag(chords_do_search_path, class:"bootsy") do %>
-	<%= text_field_tag :note1, nil, class:"form-control text-center", style:"max-width:150px" %>
-	<%= text_field_tag :note2, nil, class:"form-control text-center", style:"max-width:150px" %>
-	<%= text_field_tag :note3, nil, class:"form-control text-center", style:"max-width:150px" %>
-</div>	
+		<div class="col-md-4 col-md-offset-4">
+			<%= form_tag(chords_do_search_path, class:"bootsy") do %>
+			
+				<%= hidden_field_tag :note1, nil, class:"form-control text-center", style:"max-width:150px" %>
+				<%= hidden_field_tag :note2, nil, class:"form-control text-center", style:"max-width:150px" %>
+				<%= hidden_field_tag :note3, nil, class:"form-control text-center", style:"max-width:150px" %>
+				<%= submit_tag "Find Chord", class:"btn btn-success" %>
+			<% end %>
+		</div>	
 	</div>
-	<%= submit_tag "Find Chord", class:"btn btn-warning" %>
-	<% end %>
 	
 	<br/>
 
 
 	<%= form_tag(chords_generate_path) do %>
 	    
-	    <p>If you dont have a chord to start with, here's a freebie: <%= submit_tag "Generate Chord", class:"btn btn-success" %></p>
+	    <p>If you dont have a chord to start with, here's a freebie: <%= submit_tag "Generate Chord", class:"btn btn-warning" %></p>
 	<% end %>
 </div>
 <br/>

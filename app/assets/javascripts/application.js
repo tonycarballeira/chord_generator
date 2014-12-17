@@ -40,19 +40,19 @@ $(".chordbox").each(function(b) {
 		});
 	});
 
-	$(".progress-play").on("click", function( e ) {
+	$(document).on('click', ".progress-play", function( e ) {
 		console.log("progress clicked");
-		e.preventDefault
+		e.preventDefault();
 
-	$(".prog").each(function(delay_length){
-		console.log('timeout', delay_length);
-		setTimeout(play_audio, delay_length * 1000, this);
-	});
+		$(".prog").each(function(delay_length){
+			console.log('timeout', delay_length);
+			setTimeout(play_audio, delay_length * 1000, this);
+		});
 
-	function play_audio(audio) {
-		console.log("play", audio);
-		audio.play();
-	}
+		function play_audio(audio) {
+			console.log("play", audio);
+			audio.play();
+		}
 	});
 });
 
